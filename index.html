@@ -1,216 +1,214 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VANTX Engineering & Technology</title>
 
-<title>VANTX | Engineering & Technology</title>
+<style>
 
-<link rel="stylesheet" href="style.css">
+body{
+font-family: Arial;
+margin:0;
+background:#ffffff;
+color:#222;
+}
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+header{
+display:flex;
+justify-content:space-between;
+padding:20px 60px;
+border-bottom:1px solid #eee;
+}
 
+.logo{
+font-weight:bold;
+font-size:28px;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+}
+
+.hero{
+text-align:center;
+padding:100px 20px;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+font-size:18px;
+}
+
+.btn{
+margin-top:30px;
+padding:15px 30px;
+background:#1f7a63;
+color:white;
+border:none;
+border-radius:8px;
+}
+
+.section{
+padding:80px 20px;
+text-align:center;
+}
+
+.cards{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.card{
+border:1px solid #eee;
+padding:30px;
+width:250px;
+border-radius:10px;
+}
+
+.accordion{
+max-width:800px;
+margin:auto;
+}
+
+.accordion button{
+width:100%;
+padding:20px;
+font-size:18px;
+border:none;
+border-bottom:1px solid #eee;
+background:white;
+cursor:pointer;
+}
+
+.content{
+display:none;
+padding:20px;
+}
+
+footer{
+padding:40px;
+text-align:center;
+background:#f5f5f5;
+}
+
+</style>
 </head>
-
 
 <body>
 
 <header>
-
-<nav class="navbar">
-
 <div class="logo">VANTX</div>
 
-<ul class="menu">
-
-<li><a href="#about">Nosotros</a></li>
-<li><a href="#services">Servicios</a></li>
-<li><a href="#technology">Tecnología</a></li>
-<li><a href="#agenda">Agenda</a></li>
-<li><a href="#contact">Contacto</a></li>
-
-</ul>
-
+<nav>
+<a href="#">Home</a>
+<a href="#">Servicios</a>
+<a href="#">Tecnología</a>
+<a href="#">Contacto</a>
 </nav>
 
 </header>
 
-
 <section class="hero">
 
-<div class="hero-content">
-
-<h1>Engineering & Technology</h1>
+<h1>VANTX</h1>
+<h3>Engineering & Technology</h3>
 
 <p>
-Consultoría estratégica e innovación tecnológica para llevar tu empresa al siguiente nivel.
+Consultoría estratégica, ingeniería organizacional y tecnología predictiva para empresas que buscan escalar al siguiente nivel.
 </p>
 
-<div class="hero-buttons">
-
-<a href="#agenda" class="btn-primary">Agendar Asesoría</a>
-
-<a href="#services" class="btn-secondary">Ver Servicios</a>
-
-</div>
-
-</div>
+<button class="btn">Agendar consultoría</button>
 
 </section>
 
 
-
-<section id="about" class="about">
-
-<h2>Aliados estratégicos para empresas</h2>
-
-<p>
-
-VantEdge Engineering & Technology SpA (VANTX) es una consultora especializada en optimización organizacional, innovación tecnológica y desarrollo estratégico.
-
-Acompañamos a empresas de distintos rubros y tamaños a mejorar su gestión, reducir costos, optimizar procesos e incorporar tecnología avanzada.
-
-Nuestro enfoque es predictivo: ayudamos a anticipar desviaciones antes de que se conviertan en problemas.
-
-</p>
-
-</section>
-
-
-
-<section id="services" class="services">
+<section class="section">
 
 <h2>Servicios</h2>
 
 <div class="cards">
 
 <div class="card">
-
 <h3>Consultoría Estratégica</h3>
-
-<p>
-Optimización organizacional y cumplimiento de objetivos empresariales.
-</p>
-
+<p>Optimización de procesos y gestión organizacional.</p>
 </div>
-
 
 <div class="card">
-
-<h3>Sistemas Predictivos</h3>
-
-<p>
-Software inteligente para anticipar desviaciones y mejorar eficiencia.
-</p>
-
+<h3>Tecnología Predictiva</h3>
+<p>Software y análisis de datos para anticipar desviaciones.</p>
 </div>
-
 
 <div class="card">
-
-<h3>Capacitación Corporativa</h3>
-
-<p>
-Plataforma para evaluar y desarrollar competencias técnicas.
-</p>
-
+<h3>Sistemas de Gestión</h3>
+<p>Implementación de estándares y mejora continua.</p>
 </div>
-
 
 <div class="card">
-
-<h3>Asesoría Corporativa</h3>
-
-<p>
-Apoyo financiero, legal, tributario y estratégico.
-</p>
-
+<h3>Academia</h3>
+<p>Capacitación y evaluación de competencias.</p>
 </div>
-
 
 </div>
 
 </section>
 
 
+<section class="section">
 
-<section id="technology" class="technology">
+<h2>Servicios desplegables</h2>
 
-<h2>Innovación Tecnológica</h2>
+<div class="accordion">
 
-<p>
+<button onclick="toggle(this)">Consultoría Estratégica</button>
+<div class="content">
+<p>Optimización de procesos</p>
+<p>Auditorías internas</p>
+<p>Planificación estratégica</p>
+</div>
 
-Integramos tecnología avanzada y análisis predictivo para que las empresas puedan tomar decisiones estratégicas basadas en datos.
+<button onclick="toggle(this)">Tecnología y Software</button>
+<div class="content">
+<p>Software predictivo</p>
+<p>Dashboards</p>
+<p>Automatización</p>
+</div>
 
-</p>
+<button onclick="toggle(this)">Formación y Academia</button>
+<div class="content">
+<p>Cursos</p>
+<p>Evaluación de competencias</p>
+<p>Capacitación empresarial</p>
+</div>
 
-</section>
-
-
-
-<section id="agenda" class="agenda">
-
-<h2>Agenda una Consultoría</h2>
-
-<p>
-Agenda una reunión estratégica con nuestro equipo.
-</p>
-
-<a class="btn-primary" href="https://calendar.app.google/" target="_blank">
-
-Agendar reunión
-
-</a>
-
-</section>
-
-
-
-<section id="contact" class="contact">
-
-<h2>Contacto</h2>
-
-<form>
-
-<input type="text" placeholder="Nombre">
-
-<input type="email" placeholder="Correo">
-
-<input type="text" placeholder="Empresa">
-
-<textarea placeholder="Mensaje"></textarea>
-
-<button type="submit">Enviar</button>
-
-</form>
+</div>
 
 </section>
-
-
 
 <footer>
 
-<p>
-
-© 2026 VANTX Engineering & Technology SpA
-
-</p>
+© 2026 VANTX Engineering & Technology
 
 </footer>
 
+<script>
 
+function toggle(button){
+let content=button.nextElementSibling
+content.style.display=content.style.display==="block"?"none":"block"
+}
 
-<a class="whatsapp" href="https://wa.me/56900000000" target="_blank">
-
-WhatsApp
-
-</a>
-
-
-<script src="script.js"></script>
+</script>
 
 </body>
-
 </html>
