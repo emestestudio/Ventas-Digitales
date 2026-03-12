@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>VANTX Engineering & Technology</title>
 
 <style>
 
 body{
-font-family: Arial;
+font-family:Arial,Helvetica,sans-serif;
 margin:0;
 background:#ffffff;
 color:#222;
@@ -17,13 +19,14 @@ color:#222;
 header{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:20px 60px;
 border-bottom:1px solid #eee;
 }
 
 .logo{
-font-weight:bold;
 font-size:28px;
+font-weight:bold;
 }
 
 nav a{
@@ -35,11 +38,12 @@ color:#333;
 .hero{
 text-align:center;
 padding:100px 20px;
+background:#f7f7f7;
 }
 
 .hero h1{
 font-size:60px;
-margin-bottom:10px;
+margin:10px;
 }
 
 .hero p{
@@ -55,59 +59,97 @@ background:#1f7a63;
 color:white;
 border:none;
 border-radius:8px;
-}
-
-.section{
-padding:80px 20px;
-text-align:center;
-}
-
-.cards{
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-.card{
-border:1px solid #eee;
-padding:30px;
-width:250px;
-border-radius:10px;
-}
-
-.accordion{
-max-width:800px;
-margin:auto;
-}
-
-.accordion button{
-width:100%;
-padding:20px;
-font-size:18px;
-border:none;
-border-bottom:1px solid #eee;
-background:white;
 cursor:pointer;
 }
 
+.section{
+padding:80px 40px;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+/* COLLAGE */
+
+.collage{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+
+}
+
+.card{
+
+background:white;
+border-radius:12px;
+padding:30px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+cursor:pointer;
+transition:0.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+}
+
+.card h3{
+margin-top:0;
+}
+
 .content{
+
 display:none;
-padding:20px;
+margin-top:15px;
+color:#555;
+font-size:14px;
+
+}
+
+.content p{
+margin:6px 0;
 }
 
 footer{
+
+margin-top:60px;
 padding:40px;
-text-align:center;
 background:#f5f5f5;
+text-align:center;
+
+}
+
+/* responsive */
+
+@media(max-width:700px){
+
+header{
+
+flex-direction:column;
+gap:10px;
+
+}
+
+.hero h1{
+font-size:40px;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
+
 <header>
+
 <div class="logo">VANTX</div>
 
 <nav>
@@ -119,13 +161,19 @@ background:#f5f5f5;
 
 </header>
 
+
+
 <section class="hero">
 
 <h1>VANTX</h1>
+
 <h3>Engineering & Technology</h3>
 
 <p>
-Consultoría estratégica, ingeniería organizacional y tecnología predictiva para empresas que buscan escalar al siguiente nivel.
+
+Consultoría estratégica, ingeniería organizacional y tecnología predictiva
+para empresas que buscan escalar al siguiente nivel.
+
 </p>
 
 <button class="btn">Agendar consultoría</button>
@@ -133,67 +181,116 @@ Consultoría estratégica, ingeniería organizacional y tecnología predictiva p
 </section>
 
 
+
 <section class="section">
 
 <h2>Servicios</h2>
 
-<div class="cards">
+<div class="collage">
 
-<div class="card">
+<div class="card" onclick="toggle(this)">
+
 <h3>Consultoría Estratégica</h3>
-<p>Optimización de procesos y gestión organizacional.</p>
-</div>
 
-<div class="card">
-<h3>Tecnología Predictiva</h3>
-<p>Software y análisis de datos para anticipar desviaciones.</p>
-</div>
-
-<div class="card">
-<h3>Sistemas de Gestión</h3>
-<p>Implementación de estándares y mejora continua.</p>
-</div>
-
-<div class="card">
-<h3>Academia</h3>
-<p>Capacitación y evaluación de competencias.</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2>Servicios desplegables</h2>
-
-<div class="accordion">
-
-<button onclick="toggle(this)">Consultoría Estratégica</button>
 <div class="content">
+
 <p>Optimización de procesos</p>
+<p>Sistemas de gestión ISO</p>
 <p>Auditorías internas</p>
+<p>Gestión de riesgos</p>
 <p>Planificación estratégica</p>
+
 </div>
 
-<button onclick="toggle(this)">Tecnología y Software</button>
+</div>
+
+
+
+<div class="card" onclick="toggle(this)">
+
+<h3>Tecnología Predictiva</h3>
+
 <div class="content">
+
 <p>Software predictivo</p>
+<p>Análisis de datos</p>
 <p>Dashboards</p>
-<p>Automatización</p>
+<p>Automatización de procesos</p>
+
 </div>
 
-<button onclick="toggle(this)">Formación y Academia</button>
-<div class="content">
-<p>Cursos</p>
-<p>Evaluación de competencias</p>
-<p>Capacitación empresarial</p>
 </div>
+
+
+
+<div class="card" onclick="toggle(this)">
+
+<h3>Ingeniería Organizacional</h3>
+
+<div class="content">
+
+<p>Rediseño organizacional</p>
+<p>Optimización operativa</p>
+<p>Gestión del desempeño</p>
+
+</div>
+
+</div>
+
+
+
+<div class="card" onclick="toggle(this)">
+
+<h3>Academia Corporativa</h3>
+
+<div class="content">
+
+<p>Plataforma de cursos</p>
+<p>Evaluación técnica</p>
+<p>Capacitación empresarial</p>
+
+</div>
+
+</div>
+
+
+
+<div class="card" onclick="toggle(this)">
+
+<h3>Innovación</h3>
+
+<div class="content">
+
+<p>Transformación digital</p>
+<p>Implementación tecnológica</p>
+<p>Optimización digital</p>
+
+</div>
+
+</div>
+
+
+
+<div class="card" onclick="toggle(this)">
+
+<h3>Proyectos Estratégicos</h3>
+
+<div class="content">
+
+<p>Gestión de proyectos</p>
+<p>Evaluación de inversiones</p>
+<p>Optimización financiera</p>
+
+</div>
+
+</div>
+
 
 </div>
 
 </section>
+
+
 
 <footer>
 
@@ -201,14 +298,30 @@ Consultoría estratégica, ingeniería organizacional y tecnología predictiva p
 
 </footer>
 
+
+
 <script>
 
-function toggle(button){
-let content=button.nextElementSibling
-content.style.display=content.style.display==="block"?"none":"block"
+function toggle(card){
+
+let content = card.querySelector(".content")
+
+if(content.style.display==="block"){
+
+content.style.display="none"
+
+}else{
+
+content.style.display="block"
+
+}
+
 }
 
 </script>
 
+
+
 </body>
+
 </html>
